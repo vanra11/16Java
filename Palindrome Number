@@ -1,0 +1,22 @@
+import java.util.Scanner;
+class PalindromeNum 
+{
+	public static void main(String[] args)
+	{
+		int l,sum=0,a;  
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number to be checked: ");
+		int numtbc=sc.nextInt();
+		a=numtbc;
+		while(a>0)
+		{     
+			l=a%10;  
+			sum=(sum*10)+l;  
+			a=a/10;
+		}  
+		if(sum==numtbc)    
+			System.out.println("Number is palindrome ");    
+		else    
+			System.out.println("Number is not palindrome");    
+	}
+}
