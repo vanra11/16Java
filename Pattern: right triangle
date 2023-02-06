@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class RightTriangle 
+{   
+public static void main(String args[])   
+    {   
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter limit");
+        int r = sc.nextInt();
+        int i, j;   
+        for(i=0; i<r; i++)   //outer loop for rows
+            {   
+            for(j=0; j<=i; j++)   //inner loop sfor columns
+                {   
+                System.out.print("* ");   
+                }   
+            System.out.println();   
+            }   
+    }   
+}  
