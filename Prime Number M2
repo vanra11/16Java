@@ -1,0 +1,24 @@
+class PrimeM2
+{    
+ public static void main(String args[])
+ {    
+  int m=0,flag=0;      
+  int num=99;//Number to be checked is entered here
+  //While entering, please check the number should not be 0 or 1
+  //0 and 1 are not prime numbers
+  m=num/2; 
+   for(int i=2;i<=m;i++)
+   {      
+    if(num%i==0)
+    {      
+     System.out.println(num+" is not prime number");      
+     flag=1;      
+     break;      
+    }      
+   }      
+   if(flag==0)  
+   {
+       System.out.println(num+" is a prime number");
+    }  
+  }  
+}
