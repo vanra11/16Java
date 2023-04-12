@@ -1,0 +1,12 @@
+import java.util.Scanner;
+class Widening0
+{
+    public void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number ");
+        int i=sc.nextInt();
+        double d=i;
+        System.out.println("Double of the entered number:" +d);
+    }
+}
