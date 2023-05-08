@@ -1,0 +1,72 @@
+import java.util.Scanner;
+class Main
+{
+    public static void main(String [] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter choice to find area: ");
+        System.out.println("Choose from: 1: Square;2: Circle;3: Rectangle;4: Triangle");
+        int ch=sc.nextInt();
+        if (ch==1)
+        {
+            System.out.println("Enter Value of side: ");
+            double side=sc.nextDouble();
+            double areas=side*side;
+            System.out.println("Area of the square: "+areas);
+        }
+        else if(ch==2)
+        {
+            final double pi=3.14;
+            System.out.println("Enter the value of radius ");
+            float radius=sc.nextFloat();
+            double arear=pi*radius*radius;
+            System.out.println("Area of the circle: "+arear);
+        }
+        else if(ch==3)
+        {
+            System.out.println("Enter the value of length: ");
+            float l=sc.nextFloat();
+            System.out.println("Enter the value of breadth");
+            float b=sc.nextFloat();
+            double arearec=l*b;
+            System.out.println("Area of the rectangle: "+arearec);
+        }
+        else if(ch==4)
+        {
+            System.out.println("Enter the type of triangle: ");
+            System.out.println("1)Right angled; 2) Equilateral; 3) Scalene");
+            int c=sc.nextInt();
+            if(c==1)
+            {
+                System.out.println("Right angled triangle");
+                System.out.println("Enter the value of base: ");
+                float b1=sc.nextFloat();
+                System.out.println("Enter the value of height: ");
+                float h1=sc.nextFloat();
+                double right=(0.5)*b1*h1;
+                System.out.println("Area: "+right);
+            }
+            else if(c==2)
+            {
+                System.out.println("Equilateral Triangle");
+                System.out.println("Enter the value of side: ");
+                float  s=sc.nextFloat();
+                double equi=0.433*s*s;
+                System.out.println("Area of Equilateral Triangle= "+equi);
+            }
+            else if(c==3)
+            {
+                System.out.println("Scalene Triangle");
+                System.out.println("Enter the values of a,b and c");
+                int a=sc.nextInt();
+                int b=sc.nextInt();
+                int cs=sc.nextInt();
+                double s=(a+b+cs)/2;
+                double sca=Math.sqrt(s*(s-a)*(s-b)*(s-cs));
+                System.out.println("Area of Scalene Triangle= "+sca);
+            }
+            else
+                System.out.println("Error");
+        }
+    }
+}
