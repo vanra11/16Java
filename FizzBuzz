@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class Main
+    {
+        public static void main(String [] args)
+        {
+        System.out.println("Enter limit: ");
+        Scanner sc = new Scanner(System.in);
+        int l=sc.nextInt();
+        for(int i=1; i<=l; i++)
+            {
+        if(i%3==0)
+            System.out.println("Fizz");
+        else if(i%5==0)
+            System.out.println("Buzz");
+        else
+            System.out.println(i);
+            }
+        }
+        
+    }
