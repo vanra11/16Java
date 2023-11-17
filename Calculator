@@ -1,0 +1,135 @@
+import java.io.*;
+import java.util.Scanner;
+import java.lang.Math;
+class Main
+{
+    public static void main(String [] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Menu: ");
+        System.out.println("1: Add");
+        System.out.println("2: Subtract");
+        System.out.println("3: Multiply");
+        System.out.println("4: Divide");
+        System.out.println("5: Square");
+        System.out.println("6: Cube");
+        System.out.println("7: Square root");
+        System.out.println("8: Cube Root: ");
+        System.out.println("9: nth power of entered number");
+        System.out.println("10: nth root of entered number");
+        System.out.println("Enter choice 1-10 to calculate");
+        int choice=sc.nextInt();
+        
+        switch(choice)
+        {
+            case 1:
+                double sum=0.0;
+                System.out.println("1: Add");
+                System.out.println("Enter length: ");
+                int la=sc.nextInt();
+                System.out.println("Enter the numbers: ");
+                for (int i=0; i<la; i++)
+                {
+                    double na=sc.nextInt();
+                    sum+=na;
+                }
+                System.out.println("Sum of the entered numbers: "+sum);
+                break;
+            case 2:
+                double diff=0.0;
+                System.out.println("2: Subtract");// numbers will be subtracted in order
+                System.out.println("Enter length: ");
+                int ld=sc.nextInt();
+                System.out.println("Enter the numbers: ");
+                for (int i=0; i<ld; i++)
+                {
+                    double nd=sc.nextInt();
+                    diff-=nd;
+                }
+                System.out.println("Difference of the entered numbers: "+diff);
+                break;
+            case 3:
+                double mul=1.0;
+                System.out.println("3: Multiply");
+                System.out.println("Enter length: ");
+                int lm=sc.nextInt();
+                System.out.println("Enter the numbers: ");
+                for (int i=0; i<lm; i++)
+                {
+                    double nm=sc.nextInt();
+                    mul*=nm;
+                }
+                System.out.println("Product of the entered numbers: "+mul);
+                break; 
+            case 4:
+                double divq=1;
+                double divr=0;
+                System.out.println("4: Divide");
+                System.out.println("Enter two numbers: ");
+                for (int i=0; i<2; i++)
+                {
+                    int nd=sc.nextInt();
+                    divq/=nd;
+                    divr%=nd;
+                }
+                System.out.println("Quotient: "+divq);
+                System.out.println("Remainder: "+divr);
+                break;
+            case 5:
+                double square=0.0;
+                System.out.println("5: Square");
+                System.out.println("Enter number: ");
+                int ls=sc.nextInt();
+                square=ls*ls;
+                System.out.println("Square of the entered number: "+square);
+                break;
+            case 6:
+                double cube=0.0;
+                System.out.println("6: Cube");
+                System.out.println("Enter number: ");
+                int lc=sc.nextInt();
+                cube=lc*lc*lc;
+                System.out.println("Cube of the entered numbers: "+cube);
+                break;
+            case 7:
+                double sr=0.0;
+                System.out.println("7: Square Root");
+                System.out.println("Enter  a non-negative number: ");
+                int lr=sc.nextInt();
+                sr=Math.sqrt(lr);
+                System.out.println("Square root of enetered number: "+sr);
+                break;
+            case 8:
+                double cr=0.0;
+                System.out.println("8: Cube Root");
+                System.out.println("Enter  a non-negative number: ");
+                int lcr=sc.nextInt();
+                cr=Math.cbrt(lcr);
+                System.out.println("Cube root of enetered number: "+cr);
+                break;
+            case 9:
+                double np=0.0;
+                System.out.println("9: nth power of the entered number");
+                System.out.println("Enter the number: ");
+                int npn=sc.nextInt();
+                System.out.println("Enter the power: ");
+                int npp=sc.nextInt();
+                np=Math.pow(npn,npp);
+                System.out.println("nth power of enetered number: "+np);
+                break;
+            case 10:
+                double nr=0.0;
+                System.out.println("10: nth root of the entered number");
+                System.out.println("Enter the number: ");
+                int nrn=sc.nextInt();
+                System.out.println("Enter the power: ");
+                int nrp=sc.nextInt();
+                nr = Math.pow(nrn, 1.0 / nrp);
+                System.out.println("nth root of the required number: "+Math.round(nr));
+                break;
+            default: System.out.println("Error");
+                
+        }
+            
+    }
+}
