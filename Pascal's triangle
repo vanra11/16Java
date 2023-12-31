@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the limit for Pascal's Triangle: ");
+        int limit = scanner.nextInt();
+
+        for (int i = 0; i < limit; i++) {
+            int n = i;
+            int k = 0;
+            while (k <= i) {
+                System.out.print(combination(n, k) + " ");
+                k++;
+            }
+            System.out.println();
+        }
+    }
+
+    public static int combination(int n, int k) {
+        int res = 1;
+        for (int i = 0; i < k; i++) {
+            res = res * (n - i);
+            res = res / (i + 1);
+        }
+        return res;
+    }
+}
