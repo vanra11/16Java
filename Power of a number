@@ -1,0 +1,18 @@
+import java.util.* ;
+import java.io.*; 
+import java.lang.Math;
+class Solution {
+	
+	public static void main(String args[]) {
+		
+		// Write code here
+		Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the base number: ");
+		int b=sc.nextInt();
+    System.out.println("Enter the power: ");
+		int p=sc.nextInt();
+		int r=(int)Math.pow(b,p);
+		System.out.println("Solution: "+r);
+		
+	}
+}
