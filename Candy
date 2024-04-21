@@ -1,0 +1,54 @@
+import java.util.*;
+import java.lang.*;
+import java.math.*;
+import java.io.*;
+
+class Candy {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int n = sc.nextInt();
+            int a[] = new int[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = sc.nextInt();
+            }
+            Solution obj = new Solution();
+            int ans = obj.minCandy(n, a);
+            System.out.println(ans);
+        }
+    }
+}
+class Solution {
+    static int minCandy(int N, int ratings[]) {
+        // code here
+        int[] left = new int[N];
+        int[] right = new int[N];
+        
+        // Initialize the candies for each child to 1
+        Arrays.fill(left, 1);
+        Arrays.fill(right, 1);
+        
+        // Left pass: Update the number of candies for each child based on left neighbor
+        for (int i = 1; i < N; i++) {
+            if (ratings[i] > ratings[i - 1]) {
+                left[i] = left[i - 1] + 1;
+            }
+        }
+        
+        // Right pass: Update the number of candies for each child based on right neighbor
+        for (int i = N - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                right[i] = right[i + 1] + 1;
+            }
+        }
+        
+        // Calculate the total number of candies needed by taking maximum from left and right passes
+        int totalCandies = 0;
+        for (int i = 0; i < N; i++) {
+            totalCandies += Math.max(left[i], right[i]);
+        }
+        
+        return totalCandies;
+    }
+}
