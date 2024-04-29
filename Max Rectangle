@@ -1,0 +1,73 @@
+import java.util.*;
+
+class FindMinCost
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t > 0)
+		{
+			int n = sc.nextInt();
+			int m = sc.nextInt();
+			int arr[][] = new int[n][m];
+			for(int i=0; i<n; i++)
+			{
+				for(int j=0; j<m; j++ )
+				{
+					arr[i][j] = sc.nextInt();
+				}
+			}
+			System.out.println(new Solution().maxArea(arr, n, m));
+		t--;
+		}
+	}
+}
+
+class Solution {
+    public int maxArea(int M[][], int n, int m) {
+        int[] hist = new int[m];
+        int maxArea = 0;
+
+        for (int j = 0; j < m; j++) {
+            hist[j] = M[0][j];
+        }
+
+        maxArea = Math.max(maxArea, maxAreaHistogram(hist));
+
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (M[i][j] == 0) {
+                    hist[j] = 0;
+                } else {
+                    hist[j] += M[i][j];
+                }
+            }
+            maxArea = Math.max(maxArea, maxAreaHistogram(hist));
+        }
+        
+        return maxArea;
+    }
+
+    private int maxAreaHistogram(int[] hist) {
+        Stack<Integer> stack = new Stack<>();
+        int maxArea = 0;
+        int i = 0;
+        while (i < hist.length) {
+            if (stack.isEmpty() || hist[stack.peek()] <= hist[i]) {
+                stack.push(i++);
+            } else {
+                int top = stack.pop();
+                int area = hist[top] * (stack.isEmpty() ? i : i - stack.peek() - 1);
+                maxArea = Math.max(maxArea, area);
+            }
+        }
+        while (!stack.isEmpty()) {
+            int top = stack.pop();
+            int area = hist[top] * (stack.isEmpty() ? i : i - stack.peek() - 1);
+            maxArea = Math.max(maxArea, area);
+        }
+        return maxArea;
+        
+    }
+}
