@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Map_Demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        String[] keys = new String[n];
+        int[] values = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter key (String) for element " + (i+1) + ": ");
+            keys[i] = sc.nextLine();
+            System.out.print("Enter value (Integer) for element " + (i+1) + ": ");
+            values[i] = sc.nextInt();
+            sc.nextLine();  
+        }
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        for (int i = 0; i < n; i++) {
+            map.put(keys[i], values[i]);
+        }
+        System.out.println("Initial Mappings are: " + map);
+
+        System.out.print("Enter a key to get its value: ");
+        String keyToSearch = sc.nextLine();
+        if (map.containsKey(keyToSearch)) {
+            System.out.println("The Value is: " + map.get(keyToSearch));
+        } else {
+            System.out.println("Key not found.");
+        }
+        sc.close();
+    }
+}
